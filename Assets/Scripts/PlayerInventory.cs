@@ -17,4 +17,9 @@ public class PlayerInventory : ScriptableObject
     {
         return this.seedAmount;
     }
+
+    public void ReduceSeedAmount()
+    {
+        this.seedAmount -= 1;
+    }
 }

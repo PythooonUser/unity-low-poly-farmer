@@ -6,12 +6,13 @@ public class CameraController : MonoBehaviour
 {
     public float interactionRange = 10f;
     public LayerMask interactionLayermask;
+    public PlayerInventory playerInventory;
 
     new Camera camera;
 
     void Start()
     {
-        camera = GetComponent<Camera>();
+        this.camera = GetComponent<Camera>();
     }
 
     void Update()
@@ -19,12 +20,16 @@ public class CameraController : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, interactionRange, interactionLayermask))
+        if (Physics.Raycast(ray, out hit, this.interactionRange, this.interactionLayermask))
         {
             if (hit.collider.tag == "Field")
             {
-                Field field = hit.collider.GetComponent<Field>();
-                field.PlantSeed();
+                if (this.playerInventory.GetSeedAmount() > 0)
+                {
+                    Field field = hit.collider.GetComponent<Field>();
+                    field.PlantSeed();
+                    this.playerInventory.ReduceSeedAmount();
+                }
             }
         }
     }
