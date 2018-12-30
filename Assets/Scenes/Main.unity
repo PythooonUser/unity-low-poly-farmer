@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84a3606c60693d498c5ab314ba7a47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 10
+  interactionRange: 40
   interactionLayermask:
     serializedVersion: 2
     m_Bits: 512
