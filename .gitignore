@@ -1,0 +1,9 @@
+## VS Code generated files and folders
+.vscode
+
+## Unity generated files and folders
+Library
+Temp
+
+## Blender generated files and folders
+*.blend1
