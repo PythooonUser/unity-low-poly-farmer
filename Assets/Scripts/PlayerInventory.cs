@@ -23,6 +23,11 @@ public class PlayerInventory : ScriptableObject
         this.seedAmount -= 1;
     }
 
+    public void IncreaseSeedAmount(int seedAmount)
+    {
+        this.seedAmount += seedAmount;
+    }
+
     public GameObject GetPlantPrefab()
     {
         return this.plantPrefab;

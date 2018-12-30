@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plant Anchor
+  - Plant
   layers:
   - Default
   - TransparentFX

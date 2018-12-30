@@ -35,6 +35,13 @@ public class CameraController : MonoBehaviour
                     this.playerInventory.ReduceSeedAmount();
                 }
             }
+
+            else if (hit.collider.tag == "Plant")
+            {
+                Plant plant = hit.collider.GetComponent<Plant>();
+                int seedYield = plant.Harvest();
+                this.playerInventory.IncreaseSeedAmount(seedYield);
+            }
         }
     }
 }

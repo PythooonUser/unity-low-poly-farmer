@@ -8,21 +8,24 @@ public class PlantAnchor : MonoBehaviour
 
     void Start()
     {
-        collider = GetComponent<BoxCollider>();
+        this.collider = GetComponent<BoxCollider>();
     }
 
     public bool PlantSeed(GameObject plantPrefab)
     {
-        GameObject plant = (GameObject)Instantiate(plantPrefab, transform.position, Quaternion.identity);
-        plant.transform.SetParent(transform);
+        GameObject plantObject = (GameObject)Instantiate(plantPrefab, transform.position, Quaternion.identity);
+        plantObject.transform.SetParent(transform);
 
-        EnablePlantAnchor(false);
+        Plant plant = plantObject.GetComponent<Plant>();
+        plant.plantAnchor = this;
+
+        this.EnablePlantAnchor(false);
 
         return true;
     }
 
-    void EnablePlantAnchor(bool enable)
+    public void EnablePlantAnchor(bool enable)
     {
-        collider.enabled = enable;
+        this.collider.enabled = enable;
     }
 }
