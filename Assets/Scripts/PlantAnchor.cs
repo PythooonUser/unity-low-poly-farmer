@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PlantAnchor : MonoBehaviour
 {
-    [SerializeField] bool isActive;
+    new Collider collider;
+
+    void Start()
+    {
+        collider = GetComponent<BoxCollider>();
+    }
 
     public bool PlantSeed(GameObject plantPrefab)
     {
-        if (this.isActive)
-        {
-            return false;
-        }
-
         GameObject plant = (GameObject)Instantiate(plantPrefab, transform.position, Quaternion.identity);
         plant.transform.SetParent(transform);
 
-        this.isActive = true;
+        EnablePlantAnchor(false);
 
         return true;
+    }
+
+    void EnablePlantAnchor(bool enable)
+    {
+        collider.enabled = enable;
     }
 }

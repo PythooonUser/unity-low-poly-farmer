@@ -31,10 +31,8 @@ public class CameraController : MonoBehaviour
                 if (this.playerInventory.GetSeedAmount() > 0)
                 {
                     PlantAnchor plantAnchor = hit.collider.GetComponent<PlantAnchor>();
-                    if (plantAnchor.PlantSeed(this.playerInventory.GetPlantPrefab()))
-                    {
-                        this.playerInventory.ReduceSeedAmount();
-                    }
+                    plantAnchor.PlantSeed(this.playerInventory.GetPlantPrefab());
+                    this.playerInventory.ReduceSeedAmount();
                 }
             }
         }
