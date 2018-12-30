@@ -181,5 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e172bce4c61b944b27fe7ba4fc0879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  growthTime: 4
   seedYield: 4
   plantAnchor: {fileID: 0}
+  fruitObjects: {fileID: 1640857429539048}
