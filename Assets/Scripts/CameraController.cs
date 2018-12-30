@@ -21,7 +21,11 @@ public class CameraController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactionRange, interactionLayermask))
         {
-            if (hit.collider.tag == "Field") { }
+            if (hit.collider.tag == "Field")
+            {
+                Field field = hit.collider.GetComponent<Field>();
+                field.PlantSeed();
+            }
         }
     }
 }

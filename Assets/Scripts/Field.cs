@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Field : MonoBehaviour {
+public class Field : MonoBehaviour
+{
+    [SerializeField]
+    Transform[] plantAnchors;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool PlantSeed()
+    {
+        return true;
+    }
 }
