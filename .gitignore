@@ -5,6 +5,7 @@
 *.csproj
 *.sln
 
+Builds
 Library
 obj
 Temp
