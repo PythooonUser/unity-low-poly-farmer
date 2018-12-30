@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         this.camera = GetComponent<Camera>();
+
+        this.playerInventory.SetDefaultState();
     }
 
     void Update()
@@ -22,13 +24,15 @@ public class CameraController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, this.interactionRange, this.interactionLayermask))
         {
-            if (hit.collider.tag == "Field")
+            if (hit.collider.tag == "Plant Anchor")
             {
                 if (this.playerInventory.GetSeedAmount() > 0)
                 {
-                    Field field = hit.collider.GetComponent<Field>();
-                    field.PlantSeed();
-                    this.playerInventory.ReduceSeedAmount();
+                    PlantAnchor plantAnchor = hit.collider.GetComponent<PlantAnchor>();
+                    if (plantAnchor.PlantSeed(this.playerInventory.GetPlantPrefab()))
+                    {
+                        this.playerInventory.ReduceSeedAmount();
+                    }
                 }
             }
         }

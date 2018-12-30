@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Player Inventory")]
 public class PlayerInventory : ScriptableObject
 {
-    [SerializeField]
-    private int seedAmount;
+    [SerializeField] int seedAmount;
+    [SerializeField] GameObject plantPrefab;
 
     public void SetDefaultState()
     {
@@ -21,5 +21,10 @@ public class PlayerInventory : ScriptableObject
     public void ReduceSeedAmount()
     {
         this.seedAmount -= 1;
+    }
+
+    public GameObject GetPlantPrefab()
+    {
+        return this.plantPrefab;
     }
 }

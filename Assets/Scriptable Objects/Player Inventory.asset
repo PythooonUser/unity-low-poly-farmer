@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   seedAmount: 0
+  plantPrefab: {fileID: 1124741090380018, guid: 01d3dfeedb0b8974aa1fc963904bb11d,
+    type: 2}
