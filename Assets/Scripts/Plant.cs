@@ -4,48 +4,59 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public float growthTime = 4f;
-    public int seedYield = 2;
+    public Vector2 growthTimeMinMax = new Vector2(8f, 14f);
+    public Vector2 scaleMinMax = new Vector2(0.95f, 1.05f);
+    public Vector2 seedYieldMinMax = new Vector2(2, 6);
+
     [HideInInspector] public PlantAnchor plantAnchor;
     public GameObject fruitObjects;
 
     new Collider collider;
     bool canBeHarvested;
+    float growthTime;
+    float scale;
+    int seedYield;
     float startTime;
 
     void Start()
     {
         this.collider = GetComponent<BoxCollider>();
         this.collider.enabled = false;
-        fruitObjects.SetActive(false);
+        this.fruitObjects.SetActive(false);
         transform.localScale = Vector3.zero;
-        startTime = Time.time;
+        this.startTime = Time.time;
+
+        this.growthTime = Random.Range(this.growthTimeMinMax.x, this.growthTimeMinMax.y);
+        this.scale = Random.Range(this.scaleMinMax.x, this.scaleMinMax.y);
+        this.seedYield = Random.Range((int)this.seedYieldMinMax.x, (int)this.seedYieldMinMax.y + 1);
+
+        transform.localRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
     }
 
     void Update()
     {
-        if (canBeHarvested) { return; }
+        if (this.canBeHarvested) { return; }
 
-        float currentTime = Time.time - startTime;
+        float currentTime = Time.time - this.startTime;
 
-        if (currentTime <= growthTime)
+        if (currentTime <= this.growthTime)
         {
-            float scale = currentTime / growthTime;
-            transform.localScale = Vector3.one * scale;
+            float currentScale = currentTime / this.growthTime;
+            transform.localScale = Vector3.one * Mathf.Lerp(0f, this.scale, currentScale);
         }
 
         else
         {
             this.collider.enabled = true;
-            fruitObjects.SetActive(true);
-            canBeHarvested = true;
+            this.fruitObjects.SetActive(true);
+            this.canBeHarvested = true;
         }
     }
 
     public int Harvest()
     {
-        plantAnchor.EnablePlantAnchor(true);
+        this.plantAnchor.EnablePlantAnchor(true);
         Destroy(gameObject);
-        return seedYield;
+        return this.seedYield;
     }
 }
