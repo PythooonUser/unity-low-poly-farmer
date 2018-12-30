@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4182248905707602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4566200198292556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4856087175582836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4206580763812100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4140883648555544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 33391597939478052}
   - component: {fileID: 23247841913940480}
   - component: {fileID: 65893894445472218}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Field
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4830795621250388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant Anchor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735381463869676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: -3.11}
   m_LocalScale: {x: 3, y: 0.5, z: 2}
   m_Children:
   - {fileID: 4566200198292556}
