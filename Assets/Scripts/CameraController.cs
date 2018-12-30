@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (!Input.GetMouseButtonDown(0)) { return; }
+
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
